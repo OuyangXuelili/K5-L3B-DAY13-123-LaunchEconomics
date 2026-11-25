@@ -68,7 +68,7 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 ## Nguyễn Hữu Mạnh — 2A202604015
 
 - Phần được giao: gắn nhãn độc lập 20 ca, tổng hợp `bang_loi.md` và `phieu_cham.md` khi có hồ sơ nhóm khác.
-- Đóng góp trong workspace: đã nhập bộ nhãn 20 ca của Mạnh vào `report/team/bang_loi.md` sau khi Mạnh rà soát và chấp thuận nhãn có hỗ trợ Codex; bảng khắc phục 5 loại lỗi cũng đã được điền từ hướng dẫn. Báo cáo cá nhân tại `report/team/2A202604015_NguyenHuuManh.md` khai báo phần hỗ trợ AI.
+- Đóng góp trong workspace: Nguyễn Hữu Mạnh rà soát và chốt 20 nhãn, với Codex hỗ trợ phân loại ban đầu; nhãn được ghi trong `report/team/bang_loi.md`. Bảng khắc phục 5 loại lỗi được điền theo hướng dẫn. Báo cáo cá nhân tại `report/team/2A202604015_NguyenHuuManh.md` khai báo phần hỗ trợ AI.
 - Còn chờ bộ nhãn của Nguyễn Hoàng Ân để đối chiếu và thống nhất; do nhãn của Mạnh có AI hỗ trợ, không mô tả đây là gắn nhãn mù/độc lập. Phiếu chấm chéo chờ hồ sơ nhóm được phân công.
 
 ## Nguyễn Hoàng Ân — 2A202604025

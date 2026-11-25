@@ -20,7 +20,7 @@
 ## 3. Đóng góp cụ thể trong workspace ở thời điểm lập báo cáo
 
 - Bảng khắc phục 5 loại lỗi đã được điền trong `report/team/bang_loi.md`, dựa trên các ví dụ có sẵn trong `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md`.
-- Mạnh đã rà soát và chấp thuận 20 nhãn do Codex đề xuất; các nhãn đã nhập vào cột người gắn nhãn 1 trong `bang_loi.md`. Đây là kết quả có AI hỗ trợ, không phải quy trình gắn nhãn mù độc lập.
+- Nguyễn Hữu Mạnh rà soát và chốt 20 nhãn, với Codex hỗ trợ phân loại ban đầu; các nhãn đã nhập vào cột người gắn nhãn 1 trong `bang_loi.md`. Đây là kết quả có AI hỗ trợ, không phải quy trình gắn nhãn mù độc lập.
 - Chưa tổng hợp đồng thuận hoặc nhãn thống nhất vì chưa có nhãn của Nguyễn Hoàng Ân để đối chiếu.
 - Chưa điền `report/team/phieu_cham.md` vì workspace chưa có hồ sơ của nhóm được phân công để chấm.
 
@@ -33,7 +33,7 @@
 
 ## 5. Công cụ AI đã dùng
 
-Codex được dùng để đọc các hướng dẫn trong repo, soạn bảng khắc phục từ ví dụ có sẵn trong tài liệu, tạo bảng nhãn gợi ý có ghi rõ nguồn gốc AI, và cập nhật bản ghi tiến độ. Không ghi bảng gợi ý này thành bộ nhãn độc lập, không tính đồng thuận giả định, và không chấm một nhóm khi chưa có bằng chứng. Mạnh cần tự rà soát và xác nhận mọi đóng góp trước khi nộp.
+Codex được dùng để đọc hướng dẫn trong repo, soạn bảng khắc phục theo ví dụ có sẵn, hỗ trợ phân loại ban đầu 20 ca và cập nhật bản ghi tiến độ. Nguyễn Hữu Mạnh rà soát và chốt các nhãn trước khi nhập vào cột người gắn nhãn 1. Không tính đồng thuận giả định hoặc chấm nhóm khác khi chưa có bằng chứng.
 
 ## 6. Tự đánh giá
 
