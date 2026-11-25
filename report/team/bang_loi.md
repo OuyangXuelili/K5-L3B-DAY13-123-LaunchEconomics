@@ -4,7 +4,7 @@
 
 ## Hai bộ nhãn độc lập
 
-Người gắn nhãn 1: Nguyễn Hữu Mạnh. Người gắn nhãn 2 chưa xác nhận: `note.md` ghi Lê Khánh Cường, còn `TEAM.md` ghi Nguyễn Hoàng Ân. Hai bộ nhãn độc lập và nhãn thống nhất chưa được cung cấp; xác nhận đúng người gắn nhãn 2 và nhập nhãn thật sau khi hai người đã làm độc lập, trước khi so sánh.
+Người gắn nhãn 1: Nguyễn Hữu Mạnh · Người gắn nhãn 2: Nguyễn Hoàng Ân. Hai bộ nhãn độc lập và nhãn thống nhất chưa được cung cấp; nhập nhãn thật sau khi hai người đã làm độc lập, trước khi so sánh.
 
 | Ca | Nhãn người 1 | Nhãn người 2 | Trùng? | Nhãn thống nhất |
 | --: | --- | --- | --- | --- |

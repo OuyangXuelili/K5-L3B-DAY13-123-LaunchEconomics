@@ -29,7 +29,7 @@
 - Bảng khắc phục có các ca 9 (do người dùng), 7 (hệ thống), 18 (ngữ cảnh), 4 (giới hạn hệ thống), 17 (ngầm); mỗi dòng nêu cách phát hiện, hành động và vai trò phụ trách.
 - **Chưa hoàn tất nhiệm vụ C:** cần Mạnh tự gắn nhãn cả 20 ca; người gắn nhãn thứ hai tự làm độc lập; sau đó mới so nhãn, tính tỉ lệ đồng thuận và thống nhất nhãn.
 - **Chưa hoàn tất duyệt chéo:** cần nhận đúng hồ sơ nhóm được phân công và căn cứ chấm.
-- Có điểm chưa khớp về danh tính người gắn nhãn thứ hai: `note.md` nêu Lê Khánh Cường, còn `TEAM.md` nêu Nguyễn Hoàng Ân. Cần nhóm xác nhận phân công trước khi bắt đầu để không ghi sai thành viên.
+- Người gắn nhãn thứ hai đã được xác nhận là Nguyễn Hoàng Ân. Hai người vẫn cần gắn nhãn độc lập trước khi so sánh.
 
 ## 5. Công cụ AI đã dùng
 
