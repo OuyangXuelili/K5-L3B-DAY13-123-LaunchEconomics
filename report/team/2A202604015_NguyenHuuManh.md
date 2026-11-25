@@ -20,6 +20,7 @@
 ## 3. Đóng góp cụ thể trong workspace ở thời điểm lập báo cáo
 
 - Bảng khắc phục 5 loại lỗi đã được điền trong `report/team/bang_loi.md`, dựa trên các ví dụ có sẵn trong `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md`.
+- Đã thêm một bảng nhãn gợi ý do AI soạn kèm lý do để tham khảo. Bảng này không được ghi là nhãn độc lập của Mạnh hoặc Ân, không dùng tính đồng thuận, và chưa thay thế việc mỗi người tự ghi bộ nhãn ban đầu.
 - Tên người gắn nhãn 1 được ghi là Nguyễn Hữu Mạnh. Chưa có bộ nhãn độc lập được cung cấp để nhập vào bảng.
 - Chưa tổng hợp đồng thuận hoặc nhãn thống nhất vì chưa có hai bộ nhãn độc lập thực tế.
 - Chưa điền `report/team/phieu_cham.md` vì workspace chưa có hồ sơ của nhóm được phân công để chấm.
@@ -33,8 +34,8 @@
 
 ## 5. Công cụ AI đã dùng
 
-Codex được dùng để đọc các hướng dẫn trong repo, soạn bảng khắc phục từ ví dụ có sẵn trong tài liệu và cập nhật bản ghi tiến độ. Không dùng AI để tạo bộ nhãn độc lập, tính đồng thuận giả định hoặc chấm một nhóm khi chưa có bằng chứng. Mạnh cần đối chiếu nội dung với đề gốc và xác nhận mọi đóng góp trước khi nộp.
+Codex được dùng để đọc các hướng dẫn trong repo, soạn bảng khắc phục từ ví dụ có sẵn trong tài liệu, tạo bảng nhãn gợi ý có ghi rõ nguồn gốc AI, và cập nhật bản ghi tiến độ. Không ghi bảng gợi ý này thành bộ nhãn độc lập, không tính đồng thuận giả định, và không chấm một nhóm khi chưa có bằng chứng. Mạnh cần tự rà soát và xác nhận mọi đóng góp trước khi nộp.
 
 ## 6. Tự đánh giá
 
-Phần biện pháp khắc phục đã có bản nháp đủ năm loại lỗi và người phụ trách. Phần cốt lõi cần hoàn thành tiếp là hai bộ nhãn độc lập, đối chiếu có bằng chứng, rồi mới chốt nhãn thống nhất. Phiếu duyệt chéo chỉ có thể hoàn thành sau khi nhận hồ sơ nhóm khác.
+Phần biện pháp khắc phục đã có bản nháp đủ năm loại lỗi và người phụ trách; có thêm nhãn gợi ý để tham khảo. Phần cốt lõi cần hoàn thành tiếp là hai bộ nhãn độc lập do Mạnh và Ân tự ghi, đối chiếu có bằng chứng, rồi mới chốt nhãn thống nhất. Phiếu duyệt chéo chỉ có thể hoàn thành sau khi nhận hồ sơ nhóm khác.
