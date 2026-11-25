@@ -1,11 +1,12 @@
 """Lab 13 · Định giá agent và lập kế hoạch pilot (Gate 2a) — bài làm của nhóm (file nộp).
 Chạy trong src/: python lab13.py; thêm --write-report để cập nhật bảng chi phí.
-Phần A–B tính từ hai CSV giả lập. Nhiệm vụ D1 được bổ sung khi tích hợp.
+Phần A–B tính từ hai CSV giả lập. Phan Anh bổ sung D1 và phép tính E1.
 Bản gốc chưa sửa nằm ở lab13_starter.py.
 """
 import argparse
 import math
 from pathlib import Path
+from statistics import NormalDist
 
 import pandas as pd
 
@@ -295,6 +296,102 @@ def tao_bao_cao(runs, reqs):
     return '\n\n'.join(sections) + '\n'
 
 
+# ---------- Phan Nguyễn Phan Anh · Nhiệm vụ D1 và phép tính E1 ----------
+def co_mau_hai_ty_le(p1, p2, alpha=0.05, power=0.8):
+    """Cỡ mẫu độc lập MỖI nhóm theo công thức z hai tỉ lệ của đề, làm tròn lên."""
+    if not (0 < p1 < 1 and 0 < p2 < 1 and p1 != p2
+            and 0 < alpha < 1 and 0 < power < 1):
+        raise ValueError('Hai tỉ lệ phải khác nhau và mọi tham số phải nằm trong (0, 1)')
+    normal = NormalDist()
+    za = normal.inv_cdf(1 - alpha / 2)
+    zb = normal.inv_cdf(power)
+    pb = (p1 + p2) / 2
+    return math.ceil((za * math.sqrt(2 * pb * (1 - pb))
+                      + zb * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))) ** 2
+                     / (p2 - p1) ** 2)
+
+
+def co_mau_pilot():
+    """D1 a–e: số liệu thiết kế của lab; không suy diễn tác động từ mẫu không đối chứng."""
+    from statsmodels.stats.power import NormalIndPower
+    from statsmodels.stats.proportion import proportion_effectsize
+
+    icc, so_cum = 0.02, 20
+    n5 = co_mau_hai_ty_le(0.70, 0.75)
+    n6 = co_mau_hai_ty_le(0.70, 0.76)
+    de75 = 1 + (75 - 1) * icc
+    n_theo_nv = math.ceil(n5 * de75)
+    # Giải c*m / (1 + (m-1)*ICC) >= n6; c > n6*ICC ở phương án này.
+    m6 = math.ceil(n6 * (1 - icc) / (so_cum - n6 * icc))
+    de6 = 1 + (m6 - 1) * icc
+    n_thuc = so_cum * m6
+    n_hieu_dung = n_thuc / de6
+    power5 = NormalIndPower().power(
+        effect_size=abs(proportion_effectsize(0.70, 0.75)),
+        nobs1=n_hieu_dung, alpha=0.05, ratio=1, alternative='two-sided')
+    return dict(n_5_diem=n5, de_75=de75, n_theo_nhan_vien=n_theo_nv,
+                nhan_vien_moi_nhom=math.ceil(n_theo_nv / 75),
+                gioi_han_20_nv=so_cum / icc, gioi_han_6_depot=6 / icc,
+                n_6_diem=n6, yeu_cau_moi_nv=m6, de_6_diem=de6,
+                n_thuc_moi_nhom=n_thuc, n_hieu_dung=n_hieu_dung,
+                power_neu_chi_5_diem=float(power5))
+
+
+def chi_so_e1(reqs):
+    """Trả về tử số, mẫu số, tỉ lệ E1; giữ nguyên đầu vào và không suy ra quan hệ nhân quả."""
+    if reqs.empty:
+        raise ValueError('Cần ít nhất một yêu cầu để tính E1')
+    xem = reqs.loc[reqs.duoc_xem_lai.eq(1)]
+    counts = {
+        'dong_trong_24h_khong_mo_lai_7_ngay': (
+            int((reqs.dong_trong_24h.eq(1) & reqs.mo_lai_trong_7_ngay.eq(0)).sum()), len(reqs)),
+        'bo_qua_goi_y': (int(xem.quyet_dinh_xem_lai.isin(['sua', 'bo']).sum()), len(xem)),
+        'mo_lai_trong_7_ngay': (int(reqs.mo_lai_trong_7_ngay.eq(1).sum()), len(reqs)),
+    }
+    return {name: dict(tu_so=num, mau_so=den, ti_le=num / den if den else None)
+            for name, (num, den) in counts.items()}
+
+
+def tao_bao_cao_d1_e1(reqs):
+    """In phần bàn giao của Phan Anh; không ghi vào báo cáo A–B hay hồ sơ của thành viên khác."""
+    d1 = co_mau_pilot()
+    e1 = chi_so_e1(reqs)
+    scope = chi_so_e1(reqs.loc[reqs.loai.isin(PHAM_VI)])
+    d1_rows = [
+        ['a · Chia theo yêu cầu, +5 điểm', f"{_so(d1['n_5_diem'])} yêu cầu / nhóm"],
+        ['b · Theo nhân viên, m = 75',
+         f"DE {_so(d1['de_75'], 2)}; {_so(d1['n_theo_nhan_vien'])} yêu cầu; "
+         f"{d1['nhan_vien_moi_nhom']} người / nhóm, tổng {2*d1['nhan_vien_moi_nhom']} > 40"],
+        ['c · 20 nhân viên / nhóm', f"n hiệu dụng < {_so(d1['gioi_han_20_nv'])} < {_so(d1['n_5_diem'])}; không đủ cho +5 điểm"],
+        ['d · 6 depot / nhóm', f"n hiệu dụng < {_so(d1['gioi_han_6_depot'])}; không đủ cho +5 điểm"],
+        ['e · 20 nhân viên / nhóm, +6 điểm',
+         f"n độc lập {_so(d1['n_6_diem'])}; {d1['yeu_cau_moi_nv']} yêu cầu / người; "
+         f"DE {_so(d1['de_6_diem'], 2)}; {_so(d1['n_thuc_moi_nhom'])} yêu cầu thực tế / nhóm; "
+         f"n hiệu dụng {_so(d1['n_hieu_dung'], 2)}"],
+    ]
+    names = {
+        'dong_trong_24h_khong_mo_lai_7_ngay': 'Chính: đóng 24h và không mở lại 7 ngày',
+        'bo_qua_goi_y': 'Dùng: sửa hoặc bỏ / được xem lại',
+        'mo_lai_trong_7_ngay': 'An toàn: mở lại 7 ngày / tổng yêu cầu',
+    }
+    e1_rows = [[names[name], f"{m['tu_so']} / {m['mau_so']}",
+                _so(100*m['ti_le'], 2)+'%' if m['ti_le'] is not None else 'Không có mẫu xem lại']
+               for name, m in e1.items()]
+    safety = scope['mo_lai_trong_7_ngay']
+    return '\n\n'.join([
+        '# Phần Phan Anh · D1 và phép tính E1',
+        '## D1 · Cỡ mẫu theo công thức của đề',
+        _bang(['Câu', 'Kết quả mỗi nhóm'], d1_rows),
+        (f"Nếu tác động thật chỉ +5 điểm, power xấp xỉ {_so(d1['power_neu_chi_5_diem'], 3)} "
+         '(khoảng 0,64), thấp hơn mục tiêu 0,80; không được tuyên bố đủ mẫu cho +5 điểm.'),
+        '## E1 · Chỉ số mô tả trong đợt chạy thử (dữ liệu giả lập)',
+        _bang(['Chỉ số', 'Tử số / mẫu số', 'Kết quả'], e1_rows),
+        (f"Mở lại trong phạm vi noi_dia + hang_nang: {safety['tu_so']} / {safety['mau_so']} "
+         f"= {_so(100*safety['ti_le'], 2)}%. Không có đối chứng nên chưa kết luận trợ lý nâng chỉ số."),
+        'Chi tiết D2, rollout, luật dừng và rollback: report/team/pilot_plan.yaml.',
+    ]) + '\n'
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Tính phần A–B từ CSV của Lab 13')
     parser.add_argument('--write-report', action='store_true', help='Cập nhật report/team/bang_chi_phi.md')
@@ -308,6 +405,4 @@ if __name__ == '__main__':
         target = Path(__file__).resolve().parents[1] / 'report/team/bang_chi_phi.md'
         target.write_text(report, encoding='utf-8', newline='\n')
         print('\nĐã cập nhật report/team/bang_chi_phi.md')
-    # TODO CP4 · Phan Anh: bổ sung cỡ mẫu D1 khi nhận bàn giao A–B.
-    #   from statsmodels.stats.proportion import proportion_effectsize
-    #   from statsmodels.stats.power import NormalIndPower
+    print('\n' + tao_bao_cao_d1_e1(reqs), end='')

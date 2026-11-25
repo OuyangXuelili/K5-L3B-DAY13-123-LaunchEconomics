@@ -59,7 +59,11 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 ## Phan Nguyễn Phan Anh — 2A202604004
 
 - Phần được giao: kiểm độc lập số A–B; bổ sung D1 vào `src/lab13.py` sau bàn giao; hoàn thiện `pilot_plan.yaml`; hỗ trợ phép tính E1.
-- Đóng góp và bằng chứng: thành viên cập nhật sau khi thực hiện.
+- Đóng góp: bổ sung `co_mau_hai_ty_le`, `co_mau_pilot`, `chi_so_e1` và phần in D1/E1 trong `src/lab13.py`; hoàn thiện `report/team/pilot_plan.yaml`.
+- Kiểm số A–B: đối chiếu phép tính một trace và tổng hợp độc lập từ CSV; tổng 4.373.585 đ, CPS 4.472 đ/việc [simulated]; giới hạn 2 lượt cho chi phí hệ thống 6.901.220 đ [simulated]. Phép tính và kiểm chứng được ghi trong báo cáo cá nhân, có hỗ trợ Codex.
+- D1: 1.251 mẫu độc lập/nhóm cho +5 điểm; phương án +6 điểm dùng 20 nhân viên/nhóm, 299 yêu cầu/người, DE 6,96; 5.980 yêu cầu thực tế/nhóm tương đương 859,20 mẫu độc lập.
+- Bàn giao E1 qua output chương trình: 994/1.200 = 82,83%; 48/177 = 27,12%; 51/1.200 = 4,25% (dữ liệu giả lập); chưa kết luận tác động do không có đối chứng.
+- Bằng chứng và khai báo AI: `report/team/2A202604004_PhanNguyenPhanAnh.md`. Lịch pilot và điều kiện duyệt trong YAML là đề xuất, chưa phải hoạt động hay kết quả đã thực hiện.
 
 ## Nguyễn Hữu Mạnh — 2A202604015
 
