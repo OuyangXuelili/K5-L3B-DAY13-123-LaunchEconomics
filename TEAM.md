@@ -2,19 +2,20 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm:
-- Lớp: L3A hoặc L3B
-- Repo nhóm: `K5-L3A-DAY13-TenNhom-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt:
+- Tên nhóm: 123 (theo tên repo hiện tại)
+- Lớp: L3B
+- Repo nhóm: `K5-L3B-DAY13-123-LaunchEconomics`
+- URL repo: https://github.com/OuyangXuelili/K5-L3B-DAY13-123-LaunchEconomics
+- Nhánh làm việc: `main`; commit chốt bổ sung khi nhóm hoàn tất và push.
 
 ## Thành viên
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 |        |      |       |        |         |
-|   2 |        |      |       |        |         |
-|   3 |        |      |       |        |         |
-|   4 |        |      |       |        |         |
+| 1 | Trần Văn Quang | 2A202604032 | Không công khai email cá nhân | OuyangXuelili | Người viết code A–B, tổng hợp chi phí và tích hợp |
+| 2 | Phan Nguyễn Phan Anh | 2A202604004 | Không công khai email cá nhân | alpha19102004 | Người kiểm số; nhận vai viết code sau giải lao; phụ trách D |
+| 3 | Nguyễn Hữu Mạnh | 2A202604015 | Không công khai email cá nhân | nghmanh04 | Người gắn nhãn 1; phụ trách C và tổng hợp phiếu duyệt chéo |
+| 4 | Nguyễn Hoàng Ân | 2A202604025 | Không công khai email cá nhân | Chưa cung cấp | Người gắn nhãn 2 kiêm giữ hồ sơ; phụ trách E |
 
 Bốn vai của lab:
 
@@ -35,18 +36,44 @@ report/team/MSSV_HoTen.md
 
 Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
-Sao chép mục dưới đây cho từng thành viên.
-
-## HoVaTen-MSSV
+## Trần Văn Quang — 2A202604032
 
 ### Phần việc phụ trách
 
--
+- A1–A4: công thức chạy lại, mô hình chi phí, tách loại yêu cầu và chi phí cố định.
+- B1–B4: độ nhạy, chi phí cả hệ thống và xem lại 100%.
+- Danh sách nhóm và tài liệu bàn giao số liệu.
 
 ### Đóng góp cụ thể
 
--
+- Triển khai `src/lab13.py` để tính và in các bảng A–B từ CSV.
+- Sinh `report/team/bang_chi_phi.md` bằng `python lab13.py --write-report`.
+- Chuẩn bị báo cáo cá nhân `report/team/2A202604032_TranVanQuang.md`.
 
 ### Bằng chứng
 
--
+- Ba phép thử A1, các bảng và phần giải thích trong báo cáo chi phí.
+- Mọi kết quả dùng hai cột `_simulated` được ghi nhãn; số chỉ làm tròn khi trình bày.
+- Review chéo của thành viên khác chưa được ghi nhận.
+
+## Phan Nguyễn Phan Anh — 2A202604004
+
+- Phần được giao: kiểm độc lập số A–B; bổ sung D1 vào `src/lab13.py` sau bàn giao; hoàn thiện `pilot_plan.yaml`; hỗ trợ phép tính E1.
+- Đóng góp và bằng chứng: thành viên cập nhật sau khi thực hiện.
+
+## Nguyễn Hữu Mạnh — 2A202604015
+
+- Phần được giao: gắn nhãn độc lập 20 ca, tổng hợp `bang_loi.md` và `phieu_cham.md` khi có hồ sơ nhóm khác.
+- Đóng góp và bằng chứng: thành viên cập nhật sau khi thực hiện.
+
+## Nguyễn Hoàng Ân — 2A202604025
+
+- Phần được giao: gắn nhãn độc lập với Mạnh; hoàn thiện `chi_so.md`, `ho_so_launch_v0.md` và `group_report.md`.
+- Đóng góp và bằng chứng: thành viên cập nhật sau khi thực hiện; cần bổ sung GitHub handle.
+
+## Bàn giao và phối hợp
+
+- Quang giữ phần A–B; Phan Anh nhận sửa `lab13.py` sau giải lao, tránh hai người sửa đồng thời.
+- Mạnh và Ân giữ nguyên hai bộ nhãn độc lập trước khi so sánh; sau đó mới thống nhất nhãn chung.
+- Ân nhận số A3/B3/B4 để viết rủi ro và hồ sơ; Phan Anh nhận phạm vi A3 và điều kiện chi phí B4 để thiết kế pilot.
+- Mỗi người tự điền báo cáo cá nhân theo mẫu và khai báo công cụ đã dùng; không ghi thay hoạt động kiểm tra hoặc duyệt chéo của người khác.
