@@ -20,17 +20,16 @@
 ## 3. Đóng góp cụ thể trong workspace ở thời điểm lập báo cáo
 
 - Bảng khắc phục 5 loại lỗi đã được điền trong `report/team/bang_loi.md`, dựa trên các ví dụ có sẵn trong `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md`.
-- Đã thêm một bảng nhãn gợi ý do AI soạn kèm lý do để tham khảo. Bảng này không được ghi là nhãn độc lập của Mạnh hoặc Ân, không dùng tính đồng thuận, và chưa thay thế việc mỗi người tự ghi bộ nhãn ban đầu.
-- Tên người gắn nhãn 1 được ghi là Nguyễn Hữu Mạnh. Chưa có bộ nhãn độc lập được cung cấp để nhập vào bảng.
-- Chưa tổng hợp đồng thuận hoặc nhãn thống nhất vì chưa có hai bộ nhãn độc lập thực tế.
+- Mạnh đã rà soát và chấp thuận 20 nhãn do Codex đề xuất; các nhãn đã nhập vào cột người gắn nhãn 1 trong `bang_loi.md`. Đây là kết quả có AI hỗ trợ, không phải quy trình gắn nhãn mù độc lập.
+- Chưa tổng hợp đồng thuận hoặc nhãn thống nhất vì chưa có nhãn của Nguyễn Hoàng Ân để đối chiếu.
 - Chưa điền `report/team/phieu_cham.md` vì workspace chưa có hồ sơ của nhóm được phân công để chấm.
 
 ## 4. Bằng chứng và trạng thái
 
 - Bảng khắc phục có các ca 9 (do người dùng), 7 (hệ thống), 18 (ngữ cảnh), 4 (giới hạn hệ thống), 17 (ngầm); mỗi dòng nêu cách phát hiện, hành động và vai trò phụ trách.
-- **Chưa hoàn tất nhiệm vụ C:** cần Mạnh tự gắn nhãn cả 20 ca; người gắn nhãn thứ hai tự làm độc lập; sau đó mới so nhãn, tính tỉ lệ đồng thuận và thống nhất nhãn.
+- **Chưa hoàn tất nhiệm vụ C:** còn cần nhãn của Nguyễn Hoàng Ân và bước đối chiếu/thống nhất. Nhãn của Mạnh có hỗ trợ Codex nên không được mô tả là nhãn độc lập.
 - **Chưa hoàn tất duyệt chéo:** cần nhận đúng hồ sơ nhóm được phân công và căn cứ chấm.
-- Người gắn nhãn thứ hai đã được xác nhận là Nguyễn Hoàng Ân. Hai người vẫn cần gắn nhãn độc lập trước khi so sánh.
+- Người gắn nhãn thứ hai đã được xác nhận là Nguyễn Hoàng Ân; Ân chưa nhập bộ nhãn. Tỉ lệ đồng thuận và nhãn thống nhất chưa thể hoàn thành.
 
 ## 5. Công cụ AI đã dùng
 
