@@ -19,15 +19,14 @@
 
 - Bảng khắc phục 5 loại lỗi đã được điền trong `report/team/bang_loi.md`, dựa trên các ví dụ có sẵn trong `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md`.
 - Nguyễn Hữu Mạnh rà soát và chốt 20 nhãn, với Codex hỗ trợ phân loại ban đầu; các nhãn đã nhập vào cột người gắn nhãn 1 trong `bang_loi.md`. Đây là kết quả có AI hỗ trợ, không phải quy trình gắn nhãn mù độc lập.
-- Chưa tổng hợp đồng thuận hoặc nhãn thống nhất vì chưa có nhãn của Nguyễn Hoàng Ân để đối chiếu.
+- Nguyễn Hoàng Ân đã nhập cột nhãn thứ hai; bảng lỗi ghi nhận hai cột trùng 20/20 ca (100%) và có nhãn thống nhất cho cả 20 ca. Báo cáo bảng ghi rằng hai bộ được làm riêng trước khi đối chiếu; nhãn của Mạnh vẫn có Codex hỗ trợ như đã khai báo.
 - Chưa điền `report/team/phieu_cham.md` vì workspace chưa có hồ sơ của nhóm được phân công để chấm.
 
 ## 4. Bằng chứng và trạng thái
 
 - Bảng khắc phục có các ca 9 (do người dùng), 7 (hệ thống), 18 (ngữ cảnh), 4 (giới hạn hệ thống), 17 (ngầm); mỗi dòng nêu cách phát hiện, hành động và vai trò phụ trách.
-- **Chưa hoàn tất nhiệm vụ C:** còn cần nhãn của Nguyễn Hoàng Ân và bước đối chiếu/thống nhất. Nhãn của Mạnh có hỗ trợ Codex nên không được mô tả là nhãn độc lập.
+- **Kết quả nhiệm vụ C trong hồ sơ:** bảng ghi nhận đồng thuận 20/20 (100%) và nhãn thống nhất. Nhãn của Mạnh có hỗ trợ Codex, vì vậy không mô tả đây là gắn nhãn độc lập hoàn toàn.
 - **Chưa hoàn tất duyệt chéo:** cần nhận đúng hồ sơ nhóm được phân công và căn cứ chấm.
-- Người gắn nhãn thứ hai đã được xác nhận là Nguyễn Hoàng Ân; Ân chưa nhập bộ nhãn. Tỉ lệ đồng thuận và nhãn thống nhất chưa thể hoàn thành.
 
 ## 5. Công cụ AI đã dùng
 
@@ -35,4 +34,4 @@ Codex được dùng để đọc hướng dẫn trong repo, soạn bảng khắ
 
 ## 6. Tự đánh giá
 
-Phần biện pháp khắc phục đã có bản nháp đủ năm loại lỗi và người phụ trách; có thêm nhãn gợi ý để tham khảo. Phần cốt lõi cần hoàn thành tiếp là hai bộ nhãn độc lập do Mạnh và Ân tự ghi, đối chiếu có bằng chứng, rồi mới chốt nhãn thống nhất. Phiếu duyệt chéo chỉ có thể hoàn thành sau khi nhận hồ sơ nhóm khác.
+Phần bảng lỗi hiện có đủ năm biện pháp khắc phục, hai cột nhãn, nhãn thống nhất và kết quả đối chiếu 20/20. Codex đã hỗ trợ phân loại ban đầu cho cột của Mạnh và điều này được khai báo; phiếu duyệt chéo vẫn chờ hồ sơ nhóm được phân công.
