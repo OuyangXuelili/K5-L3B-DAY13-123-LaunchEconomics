@@ -15,7 +15,7 @@
 | 1 | Trần Văn Quang | 2A202604032 | Không công khai email cá nhân | OuyangXuelili | Người viết code A–B, tổng hợp chi phí và tích hợp |
 | 2 | Phan Nguyễn Phan Anh | 2A202604004 | Không công khai email cá nhân | alpha19102004 | Người kiểm số; nhận vai viết code sau giải lao; phụ trách D |
 | 3 | Nguyễn Hữu Mạnh | 2A202604015 | Không công khai email cá nhân | nghmanh04 | Người gắn nhãn 1; phụ trách C và tổng hợp phiếu duyệt chéo |
-| 4 | Nguyễn Hoàng Ân | 2A202604025 | Không công khai email cá nhân | Chưa cung cấp | Người gắn nhãn 2 kiêm giữ hồ sơ; phụ trách E |
+| 4 | Nguyễn Hoàng Ân | 2A202604025 | Không công khai email cá nhân | hoangan06 | Người gắn nhãn 2 kiêm giữ hồ sơ; phụ trách E |
 
 Bốn vai của lab:
 
@@ -69,13 +69,13 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 - Phần được giao: gắn nhãn độc lập 20 ca, tổng hợp `bang_loi.md` và `phieu_cham.md` khi có hồ sơ nhóm khác.
 - Đóng góp trong workspace: Nguyễn Hữu Mạnh rà soát và chốt 20 nhãn, với Codex hỗ trợ phân loại ban đầu; nhãn được ghi trong `report/team/bang_loi.md`. Bảng khắc phục 5 loại lỗi được điền theo hướng dẫn. Báo cáo cá nhân tại `report/team/2A202604015_NguyenHuuManh.md` khai báo phần hỗ trợ AI.
-- Đã xác minh kết quả đối chiếu với cột nhãn Ân xác nhận: hai cột trùng 20/20 ca sau rà soát. Tiêu chí đồng thuận độc lập chưa được xác minh. Phiếu chấm chéo chờ hồ sơ nhóm được phân công.
+- Đã xác minh hai cột trùng 20/20 ca sau rà soát. Tiêu chí đồng thuận độc lập chưa được xác minh. Phiếu duyệt chéo đang chờ giảng viên ghép nhóm.
 
 ## Nguyễn Hoàng Ân — 2A202604025
 
 - Phần được giao: gắn nhãn độc lập với Mạnh; hoàn thiện `chi_so.md`, `ho_so_launch_v0.md` và `group_report.md`.
 - Đã rà soát và xác nhận 20 nhãn. Cột thứ hai và kết quả đối chiếu nằm trong [bảng lỗi](report/team/bang_loi.md).
-- Bản làm việc của E gồm [chỉ số, event và rủi ro](report/team/chi_so.md), [hồ sơ launch](report/team/ho_so_launch_v0.md) và [báo cáo nhóm](report/team/group_report.md). Báo cáo cá nhân ghi cách dùng Codex. Đề xuất Gate 2a chờ cả nhóm chốt.
+- Nhiệm vụ E gồm [chỉ số, event và rủi ro](report/team/chi_so.md), [hồ sơ launch](report/team/ho_so_launch_v0.md) và [báo cáo nhóm](report/team/group_report.md). Báo cáo cá nhân ghi cách dùng Codex. Hồ sơ Gate 2a đề xuất Go có điều kiện cho pilot nội địa và hàng nặng.
 
 ## Bàn giao và phối hợp
 

@@ -12,10 +12,14 @@
 | 6 · Kế hoạch pilot | Nội địa và hàng nặng. Chia ngẫu nhiên theo nhân viên, **20 người và 5.980 yêu cầu mỗi nhánh**, mức chênh thiết kế **6 điểm phần trăm**, **4 luật dừng**. [Kế hoạch đề xuất](pilot_plan.yaml) | Xong, có bằng chứng | Giám đốc vận hành |
 | 7 · Rủi ro kinh tế | Làm lại gấp đôi đưa chi phí lên **6.787 đ/việc thành công**. Xem lại 100% có thể đưa chi phí lên **12.415 đ/việc thành công** trước cố định (`simulated`). [E2](chi_so.md#e2--rủi-ro-kinh-tế) | Giả lập | Quản lý sản phẩm trợ lý hoàn phí |
 
-**Điều kiện đề xuất**
+**Căn cứ đề xuất**
+
+Trong phạm vi nội địa và hàng nặng, A4 ước tính **5.217 đ/yêu cầu** so với **12.000 đ/yêu cầu** khi nhân viên tự làm. Trong kịch bản B4 xem lại 100% với thời gian làm lại trung bình, chi phí cả hệ thống lên **12.380 đ/yêu cầu** ngay cả khi chưa cộng chi phí cố định. Cả hai là số `simulated`. Pilot đo chi phí thực tế và tác động với nhóm đối chứng.
+
+**Điều kiện triển khai**
 
 - Trước **30/11/2026**, Giám đốc vận hành xác nhận đủ 40 nhân viên và chấp nhận thiết kế phát hiện chênh lệch 6 điểm. Nếu tác động thật chỉ 5 điểm, xác suất phát hiện theo thiết kế chỉ khoảng **0,64**.
 - Trước **30/11/2026**, chủ dịch vụ hoàn phí kiểm tra chống hoàn trùng, đối soát sổ cái và thử rollback. Quản lý sản phẩm xác nhận các event và số phút đo thực tế.
-- Trước cửa sổ đo chính dự kiến **28/12/2026**, Giám đốc vận hành chốt chính sách xem lại theo bằng chứng an toàn. Chi phí đo thực tế được theo dõi theo luật dừng trong kế hoạch.
+- Trước cửa sổ đo chính dự kiến **28/12/2026**, Giám đốc vận hành chốt chính sách xem lại theo bằng chứng an toàn. Đến **26/01/2027**, chỉ đề xuất tiếp tục nếu đủ mẫu và thời gian theo dõi, cận dưới khoảng tin cậy 95% của chênh lệch chỉ số chính lớn hơn 0, đạt điều kiện an toàn và chi phí toàn hệ thống dưới **12.000 đ/yêu cầu**.
 
-**Đề xuất dự thảo** — **Go có điều kiện** cho pilot nội địa và hàng nặng. Chờ nhóm thống nhất.
+**Đề xuất Gate 2a** — **Go có điều kiện** cho pilot nội địa và hàng nặng.

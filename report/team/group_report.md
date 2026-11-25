@@ -22,8 +22,9 @@ Nhóm phân tích 1.200 yêu cầu hoàn phí và 1.624 lượt chạy giả l�
 - **Chi phí** — 4.472 đ/việc thành công trên toàn mẫu. Trong phạm vi nội địa và hàng nặng, chi phí cả hệ thống gồm nhân viên làm thay và cố định là 5.217 đ/yêu cầu tại mức 45.000 yêu cầu/tháng, so với 12.000 đ/yêu cầu tự làm. Kịch bản xem lại 100% có thể lên 12.415 đ/việc thành công trước cố định. Các kết quả chi phí này là `simulated`.
 - **Chỉ số chạy thử giả lập** — 994/1.200 đóng trong 24 giờ và không mở lại trong 7 ngày (82,83%), 48/177 sửa hoặc bỏ gợi ý (27,12%), 51/1.200 mở lại trong 7 ngày (4,25%).
 - **Phân loại lỗi** — Đã xác minh hai cột nhãn sau rà soát trùng 20/20 ca. Ưu tiên kiểm tra khóa chống hoàn trùng và đối soát sổ cái trước pilot.
-- **Đề xuất dự thảo** — Go có điều kiện cho pilot nội địa và hàng nặng, chờ nhóm thống nhất. Kế hoạch dùng 20 nhân viên và 5.980 yêu cầu mỗi nhánh để phát hiện chênh lệch 6 điểm phần trăm. [Hồ sơ launch](ho_so_launch_v0.md)
-- **Kết quả duyệt chéo** — Bổ sung quyết định và phản hồi nhóm nhận được từ hội đồng sau buổi duyệt.
+- **Đề xuất Gate 2a** — Go có điều kiện cho pilot nội địa và hàng nặng. Kế hoạch dùng 20 nhân viên và 5.980 yêu cầu mỗi nhánh để phát hiện chênh lệch 6 điểm phần trăm. Kịch bản B4 xem lại 100% với thời gian làm lại trung bình làm chi phí hệ thống lên 12.380 đ/yêu cầu (`simulated`, chưa cộng cố định). Kế hoạch đặt ngưỡng tiếp tục dưới 12.000 đ/yêu cầu theo chi phí đo thực tế. [Hồ sơ launch](ho_so_launch_v0.md)
+- **Kiểm tra kỹ thuật** — Log chạy trên WSL của Ân có kết quả A–B, D1 và E1. Ba phép thử A1 đạt 1,20 · 1,25 · 1,25. Bảng A–B khớp báo cáo đã lưu. `yaml.safe_load` đọc được kế hoạch pilot có đủ 4 luật dừng. Chưa chạy lại trên máy của thành viên khác.
+- **Kết quả duyệt chéo** — Đang chờ giảng viên ghép nhóm. Bổ sung quyết định và phản hồi sau buổi duyệt.
 
 ## 5. Khó khăn và cách xử lý
 
