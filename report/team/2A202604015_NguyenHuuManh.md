@@ -1,7 +1,5 @@
 ﻿# Báo cáo cá nhân — Nguyễn Hữu Mạnh — 2A202604015
 
-> Bản ghi tiến độ được Codex soạn ngày 2026-11-25 từ thay đổi trong workspace. Mạnh cần rà soát và xác nhận trước khi dùng làm báo cáo cá nhân chính thức; không xem các thao tác của Codex là hoạt động cá nhân đã thực hiện.
-
 ## 1. Thông tin thành viên
 
 - Họ tên: Nguyễn Hữu Mạnh.
