@@ -16,7 +16,7 @@
 
 ## 3. Đóng góp cụ thể
 
-- Bản làm việc đã có công thức cho 5 chỉ số, 10 event, kết quả E1 và hai dòng rủi ro kinh tế từ B1/B4.
+- Hồ sơ có công thức cho 5 chỉ số, 11 event, kết quả E1 và ba rủi ro kinh tế từ A4, B1 và B4.
 - Hồ sơ launch và báo cáo nhóm đã tổng hợp kết quả A–B, D và E1 để đề xuất Go có điều kiện cho pilot nội địa và hàng nặng.
 - Ân xác nhận mình và Mạnh làm phần nhãn riêng trước khi đối chiếu. Ân đã kiểm tra lại đủ 20 nhãn ở cột của mình. Hai cột trùng 20/20 ca.
 - Ân chạy `python lab13.py` trong WSL và gửi log có đủ kết quả A–B, D1 và E1 để đối chiếu.

@@ -21,7 +21,7 @@
 # 859 là cỡ mẫu độc lập tương đương; số yêu cầu thực tế là 5.980/nhóm khi chia theo nhân viên.
 # CSV chỉ có 20 staff/6 depot; kế hoạch 40 staff/12 depot cần roster thật, không lấy CSV làm danh sách toàn công ty.
 # Mở lại lịch sử: 51/1.200 = 4,25%; trong scope: 39/982 = 3,97% (dữ liệu simulated).
-# Ngưỡng đề xuất: chênh >= 2 điểm so với đối chứng hoặc tuyệt đối > 6%, thay vì đặt ngưỡng 3% dưới lịch sử.
+# Trần mở lại > 6% áp dụng ở mọi bậc. Chênh >= 2 điểm so với đối chứng chỉ áp dụng từ bậc 10 người.
 
 pilot:
   owner: "Giám đốc vận hành LogiX-VN"
@@ -30,7 +30,7 @@ pilot:
   scope: "Chỉ noi_dia và hang_nang tại 12 depot, khi xác nhận đủ 40 nhân viên; loại quoc_te và doi_tac. CPS lịch sử lần lượt 2.696 và 8.221 đ/việc [simulated], chưa phải chi phí toàn hệ thống."
   prerequisites:
     - "Giám đốc vận hành xác nhận roster 40 người và ký chấp nhận MDE 6 điểm cùng power khoảng 0,64 nếu tác động chỉ 5 điểm. Thiếu cụm phải thiết kế lại, không chỉ tăng số yêu cầu."
-    - "Chủ dịch vụ hoàn phí kiểm tra khóa chống hoàn trùng, đối soát sổ cái và thử rollback trước 2026-11-30."
+    - "Chủ dịch vụ hoàn phí kiểm tra khóa chống hoàn trùng, xác nhận chỉ gửi thông báo đã hoàn sau khi sổ cái ghi thành công và thử rollback trước 2026-11-30."
     - "PM xác nhận log trace_id, phút xem lại/làm lại đo thật, thời điểm đóng/mở lại, phân nhóm và truy cập trước 2026-11-30."
   assignment:
     unit: "staff"
@@ -84,12 +84,13 @@ pilot:
     spillover_risk: "Cùng depot có thể chia sẻ câu trả lời; giới hạn tài khoản, hướng dẫn không chia sẻ và ghi truy cập theo staff_id. Phân tích theo phân nhóm ban đầu, báo nhiễm; không loại người sau khi xem kết quả."
     predeclared: "Khóa roster, seed, phiên bản agent, scope, giới hạn 2 lượt, chính sách duyệt, mẫu, chỉ số, phân tích, ngưỡng và lịch trước khi đo; PM lưu phiên bản giao thức."
   guardrail_measurement:
-    safety: "Mở lại 7 ngày chia số ca đã đủ 7 ngày sau đóng; theo dõi riêng ca chưa trưởng thành. So hai nhóm cùng quy tắc, chỉ áp ngưỡng tỉ lệ khi mỗi nhóm có >= 100 ca trưởng thành. Hoàn trùng kiểm ngay, không chờ đủ mẫu."
-    cost: "CPS đo thật = (token + tool mọi lượt + phút xem lại/làm lại đo thật x 2.000 đ) / số việc thành công đã đủ theo dõi. Không dùng phút simulated để quyết định; báo riêng nhân viên làm thay và cố định."
+    safety: "Đo tỉ lệ mở lại theo bậc và theo nhánh, dùng các ca đã đủ 7 ngày kể từ lúc đóng. Báo cả tử số và mẫu số. Trần 6% áp dụng ở mọi bậc khi có ca đủ theo dõi. Từ bậc 10 người mới so chênh lệch với đối chứng cùng kỳ, với ít nhất 100 ca đủ theo dõi mỗi nhánh. Đối soát sổ cái khi phát sinh giao dịch hoặc thông báo đã hoàn."
+    cost: "Ngưỡng 8.000 đ dùng chi phí biến đổi mỗi việc thành công = (token + tool mọi lượt + phút xem lại/làm lại đo thật x 2.000 đ) / số việc thành công đã đủ theo dõi. Báo riêng chi phí nhân viên làm thay và chi phí cố định. So sánh kinh tế cuối pilot dùng chi phí cả hệ thống trên mỗi yêu cầu."
     usage: "Bỏ qua gợi ý = số quyết định sửa hoặc bỏ / số ca được xem lại. Thiếu 30 ca xem lại/tuần thì chưa đủ căn cứ cho ngưỡng tỉ lệ."
   stop_rules:
-    - "NẾU mở lại 7 ngày của can thiệp cao hơn đối chứng >= 2 điểm phần trăm hoặc vượt 6%, mỗi nhóm có >= 100 ca đủ theo dõi TRONG 3 lần kiểm hằng ngày liên tiếp THÌ Giám đốc vận hành tắt trợ lý trong 30 phút và giao CSKH xử lý ca ảnh hưởng KHÔNG THÌ không được tăng bậc khi dữ liệu an toàn chưa đủ hoặc sự cố chưa xử lý."
-    - "NẾU phát hiện >= 1 ca hoàn trùng qua đối soát TRONG bất kỳ lần kiểm tra nào THÌ Giám đốc vận hành tắt trợ lý trong 30 phút và Kế toán khoanh vùng giao dịch ngay KHÔNG THÌ không được bật lại trước khi chủ dịch vụ sửa khóa chống trùng và đối soát xong."
+    - "NẾU tỉ lệ mở lại 7 ngày của nhóm can thiệp vượt 6% trên các ca đã đủ theo dõi TRONG bất kỳ lần kiểm hằng ngày nào ở bậc 4, 10 hoặc 20 người THÌ Giám đốc vận hành tắt trợ lý trong 30 phút và giao CSKH xử lý ca ảnh hưởng KHÔNG THÌ chỉ tăng bậc khi thời gian theo dõi và điều kiện an toàn đã đạt."
+    - "NẾU ở bậc 10 hoặc 20 người tỉ lệ mở lại 7 ngày của nhóm can thiệp cao hơn đối chứng cùng kỳ >= 2 điểm phần trăm và mỗi nhánh có >= 100 ca đủ theo dõi TRONG 3 lần kiểm hằng ngày liên tiếp THÌ Giám đốc vận hành tắt trợ lý trong 30 phút và giao CSKH xử lý ca ảnh hưởng KHÔNG THÌ giữ lịch theo dõi an toàn của bậc hiện tại."
+    - "NẾU phát hiện ít nhất 1 ca hoàn trùng hoặc một thông báo đã hoàn gửi khách khi sổ cái chưa ghi thành công TRONG bất kỳ lần đối soát nào ở bậc 4, 10 hoặc 20 người THÌ Giám đốc vận hành tắt trợ lý trong 30 phút và Kế toán khoanh vùng giao dịch ngay KHÔNG THÌ tiếp tục đối soát khi phát sinh giao dịch hoặc thông báo. Sau khi tắt, chỉ bật lại khi chủ dịch vụ khắc phục nguyên nhân và Kế toán hoàn tất đối soát."
     - "NẾU CPS đo thật chưa cố định > 8.000 đ, với >= 100 việc thành công đủ theo dõi mỗi tuần TRONG 2 tuần liên tiếp THÌ PM dừng phương án hiện tại, đề xuất thu hẹp về noi_dia và giữ tối đa 2 lượt KHÔNG THÌ không được mở rộng hang_nang hoặc gộp phương án mới vào phép đo cũ."
     - "NẾU tỉ lệ sửa hoặc bỏ gợi ý > 40%, với >= 30 ca được xem lại TRONG 1 tuần THÌ Trưởng nhóm CSKH dừng tăng bậc và phỏng vấn 5 nhân viên trong 3 ngày KHÔNG THÌ không được chuyển bậc trước khi xử lý nguyên nhân và đạt lại điều kiện sử dụng."
   interim_looks: "Không xem p-value hoặc kiểm định hiệu quả giữa kỳ; chỉ theo dõi an toàn, chi phí và sử dụng cho luật dừng. Phân tích hiệu quả một lần sau khi khóa dữ liệu và đủ theo dõi."

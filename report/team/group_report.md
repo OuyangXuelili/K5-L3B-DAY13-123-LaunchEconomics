@@ -14,7 +14,7 @@ Nhóm phân tích 1.200 yêu cầu hoàn phí và 1.624 lượt chạy giả l�
 - **A · Chi phí.** Cộng chi phí token, tool và thời gian nhân viên để tính chi phí trên mỗi yêu cầu thành công. Phân tích theo loại yêu cầu và tính chi phí cố định trong phạm vi pilot. [Bảng chi phí](bang_chi_phi.md)
 - **B · Độ nhạy.** Thay đổi các giả định chi phí, so giới hạn số lần chạy và kiểm tra kịch bản xem lại toàn bộ. [Bảng độ nhạy](bang_chi_phi.md#b1--đổi-từng-yếu-tố)
 - **C · Lỗi.** Mạnh và Ân đã rà soát và xác nhận các nhãn. Bảng ghi nhãn thống nhất và cách phát hiện, khắc phục cho 5 loại lỗi. [Bảng lỗi](bang_loi.md)
-- **D · Pilot.** So các đơn vị phân nhóm theo cỡ mẫu hiệu dụng và nguy cơ ảnh hưởng giữa hai nhánh. Chọn cách chia, chỉ số chính, ngưỡng dừng và cách quay về quy trình thủ công. [Kế hoạch pilot](pilot_plan.yaml)
+- **D · Pilot.** Chia ngẫu nhiên theo nhân viên và mở theo bậc 4 → 10 → 20. Trần mở lại trên 6% và sự cố sổ cái áp dụng ở mọi bậc. Chỉ so ngưỡng chênh 2 điểm phần trăm với đối chứng từ bậc 10 người. [Kế hoạch pilot](pilot_plan.yaml)
 - **E · Chỉ số và hồ sơ.** Đặc tả chỉ số, event đo lường và rủi ro kinh tế, rồi tổng hợp bằng chứng để nhóm chốt đề xuất. [Chỉ số và rủi ro](chi_so.md) · [Hồ sơ launch](ho_so_launch_v0.md)
 
 ## 4. Kết quả
@@ -23,7 +23,7 @@ Nhóm phân tích 1.200 yêu cầu hoàn phí và 1.624 lượt chạy giả l�
 - **Chỉ số chạy thử giả lập** — 994/1.200 đóng trong 24 giờ và không mở lại trong 7 ngày (82,83%), 48/177 sửa hoặc bỏ gợi ý (27,12%), 51/1.200 mở lại trong 7 ngày (4,25%).
 - **Phân loại lỗi** — Đã xác minh hai cột nhãn sau rà soát trùng 20/20 ca. Ưu tiên kiểm tra khóa chống hoàn trùng và đối soát sổ cái trước pilot.
 - **Đề xuất Gate 2a** — Go có điều kiện cho pilot nội địa và hàng nặng. Kế hoạch dùng 20 nhân viên và 5.980 yêu cầu mỗi nhánh để phát hiện chênh lệch 6 điểm phần trăm. Kịch bản B4 xem lại 100% với thời gian làm lại trung bình làm chi phí hệ thống lên 12.380 đ/yêu cầu (`simulated`, chưa cộng cố định). Kế hoạch đặt ngưỡng tiếp tục dưới 12.000 đ/yêu cầu theo chi phí đo thực tế. [Hồ sơ launch](ho_so_launch_v0.md)
-- **Kiểm tra kỹ thuật** — Log chạy trên WSL của Ân có kết quả A–B, D1 và E1. Ba phép thử A1 đạt 1,20 · 1,25 · 1,25. Bảng A–B khớp báo cáo đã lưu. `yaml.safe_load` đọc được kế hoạch pilot có đủ 4 luật dừng. Chưa chạy lại trên máy của thành viên khác.
+- **Kiểm tra kỹ thuật** — Log chạy trên WSL của Ân có kết quả A–B, D1 và E1. Ba phép thử A1 đạt 1,20 · 1,25 · 1,25. Bảng A–B khớp báo cáo đã lưu. `yaml.safe_load` đọc được bản kế hoạch cập nhật có 5 luật dừng. Chưa chạy lại trên máy của thành viên khác.
 - **Kết quả duyệt chéo** — Đang chờ giảng viên ghép nhóm. Bổ sung quyết định và phản hồi sau buổi duyệt.
 
 ## 5. Khó khăn và cách xử lý
